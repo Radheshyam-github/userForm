@@ -15,28 +15,30 @@ app.post(
     "/create-account",
     async (req, res) => {
         try {
-            const userregister= new form(
+            const userregister = new form(
                 {
                     firstname: req.body.firstname,
                     lastname: req.body.lastname,
-                    Mobile_No: req.body.mobileno,
-                    Email_Id: req.body.emailid,
+                    MobileNo: req.body.mobileno,
+                    EmailId: req.body.emailid,
                     Street: req.body.street,
                     City: req.body.city,
                     State: req.body.state,
                     country: req.body.country,
-                    Login_id: req.body.Login_id,
+                    Loginid: req.body.loginid,
                     password: req.body.password,
                 }
             )
-            userregister.save()
+            // console.log(userregister);
+            userregister.save();
+
         } catch (error) {
-            console.log("hello");
+            // console.log("hello");
             console.log(error);
         }
     }
 
-)
+)   
 app.listen(1800, () => {
     console.log(`Frontend  is running ${1800}`);
 }
